@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.learnprogramstudy.sampler.common.SampleBase
 import com.learnprogramstudy.sampler.utils.clearScreen
+import com.learnprogramstudy.sampler.utils.use
 
 class GdxGeneratedSample : SampleBase() {
     lateinit var batch: SpriteBatch
@@ -17,9 +18,7 @@ class GdxGeneratedSample : SampleBase() {
     override fun render() {
         clearScreen()
 
-        batch.begin()
-        batch.draw(img, 0f, 0f)
-        batch.end()
+        batch.use { batch.draw(img, 0f, 0f) }
     }
 
     override fun dispose() {

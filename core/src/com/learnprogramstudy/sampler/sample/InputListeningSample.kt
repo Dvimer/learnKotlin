@@ -8,10 +8,7 @@ import com.badlogic.gdx.utils.Logger
 import com.badlogic.gdx.utils.viewport.FillViewport
 import com.badlogic.gdx.utils.viewport.Viewport
 import com.learnprogramstudy.sampler.common.SampleBase
-import com.learnprogramstudy.sampler.utils.GdxArray
-import com.learnprogramstudy.sampler.utils.clearScreen
-import com.learnprogramstudy.sampler.utils.logger
-import com.learnprogramstudy.sampler.utils.toInternalFile
+import com.learnprogramstudy.sampler.utils.*
 
 
 class InputListeningSample : SampleBase() {
@@ -47,9 +44,7 @@ class InputListeningSample : SampleBase() {
         clearScreen()
 
         batch.projectionMatrix = camera.combined
-        batch.begin()
-        draw()
-        batch.end()
+        batch.use { draw() }
     }
 
     private fun draw() {

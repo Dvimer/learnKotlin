@@ -13,6 +13,7 @@ import com.learnprogramstudy.sampler.common.SampleBase
 import com.learnprogramstudy.sampler.utils.clearScreen
 import com.learnprogramstudy.sampler.utils.logger
 import com.learnprogramstudy.sampler.utils.toInternalFile
+import com.learnprogramstudy.sampler.utils.use
 
 class InputPolingSample : SampleBase() {
     companion object {
@@ -43,9 +44,7 @@ class InputPolingSample : SampleBase() {
        clearScreen()
 
         batch.projectionMatrix = camera.combined
-        batch.begin()
-        draw()
-        batch.end()
+        batch.use { draw() }
     }
 
     private fun draw() {

@@ -13,7 +13,8 @@ object SampleInfos {
             SampleInfo(MultiplexerSampler::class.java),
             SampleInfo(ReflectionSample::class.java),
             SampleInfo(OrthographicCameraSample::class.java),
-            SampleInfo(ViewportSample::class.java)
+            SampleInfo(ViewportSample::class.java),
+            SampleInfo(SpriteBatchSample::class.java)
     )
 
     fun getSampleNames() = allSamples.associateBy { it.name }.keys.toList().sorted().toTypedArray()

@@ -10,10 +10,7 @@ import com.badlogic.gdx.utils.ArrayMap
 import com.badlogic.gdx.utils.Logger
 import com.badlogic.gdx.utils.viewport.*
 import com.learnprogramstudy.sampler.common.SampleBase
-import com.learnprogramstudy.sampler.utils.clearScreen
-import com.learnprogramstudy.sampler.utils.isKeyPressed
-import com.learnprogramstudy.sampler.utils.logger
-import com.learnprogramstudy.sampler.utils.toInternalFile
+import com.learnprogramstudy.sampler.utils.*
 
 class ViewportSample : SampleBase() {
     companion object {
@@ -79,9 +76,7 @@ class ViewportSample : SampleBase() {
         clearScreen()
 
         batch.projectionMatrix = camera.combined
-        batch.begin()
-        draw()
-        batch.end()
+        batch.use { draw() }
     }
 
 
